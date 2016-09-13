@@ -27,7 +27,7 @@ class teamcity::agent::service {
       $class_name = 'win_service'
     }
     default: {
-      fail("Unknown service provider '${real_service_provider}'!")
+      fail("Unknown service provider '${teamcity::params::service_provider}'!")
     }
   }
 
