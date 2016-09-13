@@ -12,13 +12,11 @@ class teamcity::agent::config {
     { 'path' => "${::teamcity::agent_dir}/conf/buildAgent.properties" }
   )
 
-  notify {"Setting \$::teamcity::launcher_wrapper_conf: ${::teamcity::launcher_wrapper_conf}":}
-
   # configure launcher/conf/wrapper.conf
-  # create_ini_settings(
-  #   { '' => $::teamcity::launcher_wrapper_conf },
-  #   { 'path' => "${::teamcity::agent_dir}/launcher/conf/wrapper.conf" }
-  # )
+  create_ini_settings(
+    { '' => $::teamcity::launcher_wrapper_conf },
+    { 'path' => "${::teamcity::agent_dir}/launcher/conf/wrapper.conf" }
+  )
 
   if $::kernel == 'windows' {
     windows_env { 'TEAMCITY_AGENT_MEM_OPTS':

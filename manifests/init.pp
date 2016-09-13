@@ -94,3 +94,5 @@ class teamcity (
 ) inherits ::teamcity::params {
   include ::teamcity::agent
 }
+
+fail("TEST '${launcher_wrapper_conf}'")

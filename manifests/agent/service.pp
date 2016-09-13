@@ -5,13 +5,11 @@ class teamcity::agent::service {
     if ! ($teamcity::service_provider in $teamcity::params::service_providers) {
       fail("'${teamcity::service_provider}' is not a valid provider for '${::operatingsystem}'")
     }
-    $real_service_provider = $teamcity::params::service_provider
+    $real_service_provider = $teamcity::service_provider
   } else {
     # There is only one option so simply set it
     $real_service_provider = $teamcity::params::service_providers
   }
-
-  notify {"Setting \$real_service_provider: ${real_service_provider}":}
 
   case $real_service_provider {
     'init': {
@@ -27,7 +25,7 @@ class teamcity::agent::service {
       $class_name = 'win_service'
     }
     default: {
-      fail("Unknown service provider '${teamcity::params::service_provider}'!")
+      fail("Unknown service provider '${real_service_provider}'!")
     }
   }
 
