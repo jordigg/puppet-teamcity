@@ -71,6 +71,7 @@
 #
 #
 class teamcity (
+  fail("TEST '${launcher_wrapper_conf}'")
   $agent_name              = $teamcity::params::agent_name,
 
   $agent_user              = $teamcity::params::agent_user,
@@ -92,6 +93,5 @@ class teamcity (
   $custom_properties       = $teamcity::params::custom_properties,
   $launcher_wrapper_conf   = $teamcity::params::launcher_wrapper_conf,
 ) inherits ::teamcity::params {
-  fail("TEST '${launcher_wrapper_conf}'")
   include ::teamcity::agent
 }
