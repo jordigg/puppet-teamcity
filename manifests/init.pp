@@ -70,8 +70,6 @@
 #   Hash of custom properties, that will be applied to launcher/conf/wrapper.conf
 #
 #
-fail("TEST '${teamcity::params::launcher_wrapper_conf}'")
-
 class teamcity (
   $agent_name              = $teamcity::params::agent_name,
 

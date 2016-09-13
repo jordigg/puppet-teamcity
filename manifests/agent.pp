@@ -5,6 +5,8 @@
 class teamcity::agent {
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin' ] }
 
+  fail("Unknown service provider '${teamcity::params::launcher_wrapper_conf}'!")
+
   anchor { '::teamcity::agent::begin': }  ->
   class { '::teamcity::agent::install': } ->
   class { '::teamcity::agent::config': }  ~>
