@@ -5,7 +5,7 @@ class teamcity::agent::service {
     if ! ($teamcity::service_provider in $teamcity::params::service_providers) {
       fail("'${teamcity::service_provider}' is not a valid provider for '${::operatingsystem}'")
     }
-    $real_service_provider = $teamcity::service_provider
+    $real_service_provider = $teamcity::params::service_provider
   } else {
     # There is only one option so simply set it
     $real_service_provider = $teamcity::params::service_providers
