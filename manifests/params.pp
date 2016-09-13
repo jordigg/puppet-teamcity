@@ -63,4 +63,6 @@ class teamcity::params {
   $teamcity_agent_mem_opts = '-Xms512m -Xmx1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8'
   $custom_properties       = { }
   $launcher_wrapper_conf   = { }
+
+  fail("TEST '${launcher_wrapper_conf}'")
 }
