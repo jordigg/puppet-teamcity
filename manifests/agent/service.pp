@@ -11,6 +11,8 @@ class teamcity::agent::service {
     $real_service_provider = $teamcity::params::service_providers
   }
 
+  notify {"Setting \$real_service_provider: ${real_service_provider}":}
+
   case $real_service_provider {
     'init': {
       $class_name = 'initd'
