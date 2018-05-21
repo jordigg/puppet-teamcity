@@ -64,7 +64,7 @@
     ],
     "dependencies": [
         {
-            "name": "puppetlabs/stdlib",
+            "name": "puppetlabs-stdlib",
             "version_requirement": ">= 2.3.0"
         },
         {
@@ -76,11 +76,11 @@
             "version_requirement": ">= 1.2.1"
         },
         {
-            "name": "puppetlabs/inifile",
+            "name": "puppetlabs-inifile",
             "version_requirement": ">= 1.4.1"
         },
         {
-            "name": "badgerious-windows_env",
+            "name": "puppet-windows_env",
             "version_requirement": ">= 2.2.2"
         }
     ]
